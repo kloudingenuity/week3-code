@@ -37,6 +37,13 @@ class TodoListApp extends Component {
         });
     }
 
+    onClear = () => {
+        this.setState({
+            todos: [],
+            todoItem: ''
+        });
+    }
+
     render() {
         return (
             <div className="TodoListApp">
@@ -50,6 +57,7 @@ class TodoListApp extends Component {
                     value={this.state.todoItem}
                 />
                 <button onClick={this.onSubmit}>Add</button>
+                <button onClick={this.onClear}>Clear</button>
                 <TodoListItems todos={this.state.todos} />
             </div>
         )
